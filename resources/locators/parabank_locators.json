@@ -1,0 +1,8 @@
+{
+    "Customer Login": "//h2[text()='Customer Login']",
+    "Username": "//input[@name='username']",
+    "Password": "//input[@name='password']",
+    "Log In": "//input[@value='Log In']",
+    "Forgot login info?": "//a[text()='Forgot login info?']",
+    "Register": "//a[text()='Register']"
+}
