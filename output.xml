@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.12.4 on win32)" generated="2025-10-06T00:45:37.296102" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Test" source="C:\Users\Public\Robot_framework\Web_template\Robot-framework-Web-Automaton-\tests\LoginPage_Test\Login_Test.robot">
+<test id="s1-t1" name="Login Test" line="7">
+<kw name="Successful Login" owner="login_step">
+<kw name="Launch the browser" owner="homePage">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-10-06T00:45:37.559692" level="INFO">Opening browser 'chrome' to base url 'https://practice.expandtesting.com/login'.</msg>
+<arg>${APPLICATION_LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-10-06T00:45:37.559692" elapsed="10.430795"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-06T00:45:47.991483" elapsed="0.043074"/>
+</kw>
+<status status="PASS" start="2025-10-06T00:45:37.559692" elapsed="10.474865"/>
+</kw>
+<kw name="Enter Username" owner="homePage">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:username</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T00:45:48.035557" elapsed="0.044992"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T00:45:48.080549" level="INFO">Typing text 'practice' into text field 'id:username'.</msg>
+<arg>id:username</arg>
+<arg>${Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T00:45:48.080549" elapsed="0.114665"/>
+</kw>
+<arg>${Username}</arg>
+<status status="PASS" start="2025-10-06T00:45:48.034557" elapsed="0.160657"/>
+</kw>
+<kw name="Enter Password" owner="homePage">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>id:password</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-10-06T00:45:48.195214" elapsed="0.008467"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T00:45:48.203681" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id:password'.</msg>
+<arg>id:password</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T00:45:48.203681" elapsed="0.089712"/>
+</kw>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-10-06T00:45:48.195214" elapsed="0.098179"/>
+</kw>
+<kw name="Click on Login Button" owner="homePage">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath://button[@type="submit"]</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-10-06T00:45:48.294445" elapsed="0.325083"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://button[text()='Login']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-10-06T00:45:48.619528" elapsed="0.016587"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-06T00:45:51.636938" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-06T00:45:48.636115" elapsed="3.000823"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath://button[text()='Login']</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-10-06T00:45:51.636938" elapsed="0.026259"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-06T00:45:51.663197" level="INFO">Clicking element 'xpath://button[text()='Login']'.</msg>
+<arg>xpath://button[text()='Login']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T00:45:51.663197" elapsed="5.945224"/>
+</kw>
+<status status="PASS" start="2025-10-06T00:45:48.294445" elapsed="9.313976"/>
+</kw>
+<kw name="get Successful login message" owner="homePage">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-10-06T00:45:58.100552" level="INFO">${Login_message} = Welcome to the Secure Area. When you are done click logout below.</msg>
+<var>${Login_message}</var>
+<arg>class:subheader</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-06T00:45:57.609423" elapsed="0.491129"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Login_message}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-06T00:45:58.100552" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${Login_message}</arg>
+<arg>Welcome to the Secure Area. When you are done click logout below.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-10-06T00:45:58.100552" elapsed="0.002010"/>
+</kw>
+<status status="PASS" start="2025-10-06T00:45:57.609423" elapsed="0.493139"/>
+</kw>
+<arg>${Username}</arg>
+<arg>${Password}</arg>
+<status status="PASS" start="2025-10-06T00:45:37.559692" elapsed="20.542870"/>
+</kw>
+<doc>Test Case 1: Successful Login</doc>
+<status status="PASS" start="2025-10-06T00:45:37.559692" elapsed="20.542870"/>
+</test>
+<status status="PASS" start="2025-10-06T00:45:37.311815" elapsed="20.796775"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Test" id="s1" pass="1" fail="0" skip="0">Login Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-10-06T00:45:37.549342" level="WARN">Error in file 'C:\Users\Public\Robot_framework\Web_template\Robot-framework-Web-Automaton-\resources\page_objects\homePage.resource' on line 1: Singular section headers like '*** Setting ***' are deprecated. Use plural format like '*** Settings ***' instead.</msg>
+</errors>
+</robot>
